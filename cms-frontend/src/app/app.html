@@ -1,0 +1,43 @@
+<div class="min-h-screen bg-gray-100 p-8 flex flex-col items-center">
+  <!-- Main Application Header/Title -->
+  <h1 class="text-3xl font-bold mb-8 text-gray-800">{{ title() }}</h1>
+
+  <!-- Start of a Single MatCard (for a sample blog post) -->
+  <mat-card
+    class="shadow-xl rounded-xl p-0 w-full max-w-xl mb-6 bg-white transition duration-300 hover:shadow-2xl"
+  >
+    <!-- 1. Card Header (Optional) -->
+    <mat-card-header class="p-4 border-b border-gray-100">
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title class="text-xl font-semibold text-gray-900">
+        First Blog Post Title
+      </mat-card-title>
+      <mat-card-subtitle class="text-sm text-gray-500 mt-1">
+        Published by Suran Sandeepa on Oct 25, 2025
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- 2. Card Content (The main body of the post/summary) -->
+    <mat-card-content class="p-6 text-gray-700">
+      <p class="text-base mb-4">
+        This is the summary of the first blog post. Here you would place a snippet of the article to
+        entice the user to click the "Read More" button. We are using Tailwind CSS classes for
+        fine-tuning the typography and spacing.
+      </p>
+      <p class="text-sm italic text-gray-500">Category: Angular Development</p>
+    </mat-card-content>
+
+    <!-- 3. Card Actions (Buttons or links) -->
+    <mat-card-actions class="flex justify-end p-4 pt-0 border-t border-gray-100">
+      <!-- We are using the MatButtonModule you imported earlier -->
+      <button
+        mat-flat-button
+        color="primary"
+        class="font-semibold transition duration-200 hover:scale-[1.02]"
+      >
+        Read More
+      </button>
+      <button mat-button class="ml-2 text-gray-600">Share</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
