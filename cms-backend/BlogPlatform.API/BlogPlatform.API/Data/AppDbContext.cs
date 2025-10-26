@@ -13,6 +13,9 @@ namespace BlogPlatform.API.Data
         // EF Core will create tables named 'Posts' and 'Categories' based on your models.
         public DbSet<Post>Posts { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        // --- NEW DbSet ADDED FOR TAGS ---
+        public DbSet<Tag> Tags { get; set; }
     }
 }
 
