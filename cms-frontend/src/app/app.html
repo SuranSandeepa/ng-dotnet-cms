@@ -1,43 +1,68 @@
-<div class="min-h-screen bg-gray-100 p-8 flex flex-col items-center">
-  <!-- Main Application Header/Title -->
-  <h1 class="text-3xl font-bold mb-8 text-gray-800">{{ title() }}</h1>
+<mat-toolbar color="primary" class="shadow-lg">
+  <!-- Application Title -->
+  <span class="text-2xl font-extrabold mr-8 cursor-pointer">{{ title() }}</span>
 
-  <!-- Start of a Single MatCard (for a sample blog post) -->
-  <mat-card
-    class="shadow-xl rounded-xl p-0 w-full max-w-xl mb-6 bg-white transition duration-300 hover:shadow-2xl"
-  >
-    <!-- 1. Card Header (Optional) -->
-    <mat-card-header class="p-4 border-b border-gray-100">
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title class="text-xl font-semibold text-gray-900">
-        First Blog Post Title
-      </mat-card-title>
-      <mat-card-subtitle class="text-sm text-gray-500 mt-1">
-        Published by Suran Sandeepa on Oct 25, 2025
-      </mat-card-subtitle>
+  <!-- Category Navigation Menu (Dynamic Data) -->
+  <div *ngFor="let category of categoryList()">
+    <button
+      mat-button
+      class="text-white text-base font-semibold mx-1 hover:bg-white/10 transition duration-150"
+    >
+      {{ category.name }}
+    </button>
+  </div>
+
+  <!-- Spacer to push the 'Admin' link to the right -->
+  <span class="flex-grow"></span>
+
+  <button mat-button class="text-white font-semibold hover:bg-white/10 transition duration-150">
+    Admin
+  </button>
+</mat-toolbar>
+
+<!-- Main content area container, centered and responsive -->
+<div class="p-4 sm:p-8 max-w-7xl mx-auto">
+  <h2 class="text-3xl font-extrabold text-gray-800 mb-8">Full-Stack Connection Confirmed</h2>
+
+  <!-- Main Status Card -->
+  <mat-card class="shadow-2xl rounded-xl p-6 bg-white border-t-4 border-blue-500">
+    <mat-card-header class="mb-4">
+      <mat-card-title class="text-2xl font-bold text-blue-700"
+        >System Status: Operational</mat-card-title
+      >
+      <mat-card-subtitle class="text-gray-500 mt-1"
+        >Your Angular frontend is successfully fetching live data from your .NET
+        API.</mat-card-subtitle
+      >
     </mat-card-header>
 
-    <!-- 2. Card Content (The main body of the post/summary) -->
-    <mat-card-content class="p-6 text-gray-700">
-      <p class="text-base mb-4">
-        This is the summary of the first blog post. Here you would place a snippet of the article to
-        entice the user to click the "Read More" button. We are using Tailwind CSS classes for
-        fine-tuning the typography and spacing.
+    <mat-card-content>
+      <!-- Introductory Text -->
+      <p class="text-gray-700 pb-4">
+        This connection validates your entire backend infrastructure: the **Database Migration**,
+        **Generic Repository**, and **CORS Configuration** are all working perfectly!
       </p>
-      <p class="text-sm italic text-gray-500">Category: Angular Development</p>
+
+      <!-- Divider -->
+      <hr class="my-4 border-gray-100" />
+
+      <!-- Available Tags Section (Dynamic Data) -->
+      <h3 class="text-lg font-semibold text-gray-800 mb-3">Available Tags (Fetched Live):</h3>
+      <div class="flex flex-wrap gap-3">
+        <!-- Loop through the tagList data -->
+        <span
+          *ngFor="let tag of tagList()"
+          class="px-4 py-1.5 bg-indigo-100 text-indigo-700 text-sm font-medium rounded-full shadow-md hover:bg-indigo-200 transition duration-150 cursor-pointer"
+        >
+          #{{ tag.name }}
+        </span>
+      </div>
     </mat-card-content>
 
-    <!-- 3. Card Actions (Buttons or links) -->
-    <mat-card-actions class="flex justify-end p-4 pt-0 border-t border-gray-100">
-      <!-- We are using the MatButtonModule you imported earlier -->
-      <button
-        mat-flat-button
-        color="primary"
-        class="font-semibold transition duration-200 hover:scale-[1.02]"
-      >
-        Read More
+    <mat-card-actions class="mt-6 border-t border-gray-100 pt-4">
+      <button mat-flat-button color="accent" class="text-white font-bold">
+        Start Building the Blog Posts
       </button>
-      <button mat-button class="ml-2 text-gray-600">Share</button>
     </mat-card-actions>
   </mat-card>
 </div>
