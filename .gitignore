@@ -1,0 +1,97 @@
+Standard Git ignore file for Visual Studio and .NET Core projects
+
+--------------------
+
+1. Project & Build Outputs
+
+--------------------
+
+Binaries for the compiled source code
+
+[Bb]in/
+[Oo]bj/
+
+Output from dotnet publish
+
+[Pp]ublish/
+
+Test results
+
+[Tt]est[Rr]esult/
+
+--------------------
+
+2. Visual Studio Specific Files
+
+--------------------
+
+Visual Studio user-specific files
+
+*.user
+*.suo
+
+Visual Studio temporary solution files
+
+*.tmp
+
+Solution user options (often contains local settings)
+
+*.vsscc
+*.vspscc
+*.vssscc
+
+Visual Studio's hidden, temporary solution folder
+
+This is what caused your "Permission denied" error.
+
+.vs/
+
+Generated migration file backups
+
+..bak
+
+--------------------
+
+3. Third-Party Tools & Package Caches
+
+--------------------
+
+NuGet packages cache
+
+.nuget/
+
+NuGet folder for restoring packages (for older projects)
+
+[Pp]ackages/
+
+Editor settings file
+
+.editorconfig
+
+--------------------
+
+4. Operating System Files
+
+--------------------
+
+Thumbs.db (Windows file explorer cache)
+
+Thumbs.db
+
+macOS specific files
+
+.DS_Store
+
+--------------------
+
+5. Angular Frontend (node_modules)
+
+--------------------
+
+Node package dependencies (large and generated)
+
+cms-frontend/node_modules/
+
+Angular build output
+
+cms-frontend/dist/
